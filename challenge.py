@@ -34,11 +34,16 @@ while start == 1:
 
                         guincho_escolha = int (input("Você sabe que tipo de guincho precisaria? (1) - Sim e (2) Não"))
                         if guincho_escolha == 1:
+                            tipo_guincho = input("Descreva o tipo de guincho")
+
+
                             tipo_guincho = input("Digite o tipo de guinhco que nós encaminharemos para você")
                         elif guincho_escolha == 2:
+                            print("Ok, iremos de auxiliar nos próximos passsos")
+                            
 
 
-                        print(f"O guinhco para o veiculo pesado de placa: {veic} do propietário de cpf: {cpf} está sendo enviado para o endereço {end_pesado}")
+                            print(f"O guinhco para o veiculo pesado de placa: {veic} do propietário de cpf: {cpf} está sendo enviado para o endereço {end_pesado}")
                     else:
                         print("Tipo de carro inválido")
 
