@@ -1,75 +1,61 @@
-cpf = float(input("Informe seu CPF ou CNPJ: "))
+print("Bem-vindo a NEO Porto. Aqui nos agilizamos seu processo de solicitação de guincho!")
+print("")
+print("Vamos começar?")
+start = int (input("Digite (1) para SIM e (2) para NÃO"))
+
+while start == 1:
+
+    cpf = float(input("Informe seu CPF ou CNPJ: "))
+    print("Para prosseguir precisamos de algumas informações.")
+    veic = input("Qual a placa do veiculo: ")
 
 
-print("Opção 1: Solicitar guincho")
-print("Opção 2: Falar com atendente")
-print("Opção 3: Recomeçar com outro CPF ou CNPJ")
+#PRIMEIRO VEMOS SE É URGENTE OU NÃO
+    imediatouagendamento = int (input("Digite (1) para atendimento imediato ou (2) para agendamento:"))
+    match imediatouagendamento:
+        case 1:
+            print("Atendimento imediato")
 
-inf = int(input("Informe a opção desejada: "))
+            # VEMOS AQUI A SITUACAO
 
-match inf:
-    case 1:
-       print("Para prosseguir precisamos de algumas informações.")
-       veic = input("Qual a placa do veiculo: ")
-       print("Para te atender melhor, preciso saber o que houve com o veículo.")
+            situacao = int(input("Digite a informação que mais se adequa a situação sendo (1) Acidente de trânsito e (2) falha operacional"))
+            match situacao:
+                case 1:
+                    print("Acidente de trânsito")
+                    tipo_carro = int (input("O seu veiuculo é (1) leve/comum ou (2) pesado?"))
+                    if tipo_carro == 1: ##carro comum/leve
+                        end_leve = input("Qual endereço deveremos ir")
+                        tel_leve = input("Qual telefone devemos ligar?")
+                        print(f"O guinhco para o veiculo comum/leve de placa: {veic} do propietário de cpf: {cpf} está sendo enviado para o endereço {end_leve}")
 
-       print("Opção 1: Meu veiculo parou e preciso remove-lo do local.")
-       print("Opção 2: Acabou o combustivel.")
-       print("Opção 3: Meu veiculo está com problema e não sei o motivo.")
-       print("Opção 4: Acidente, incendio ou enchente.")
-       print("Opção 5: Não encontrei o que preciso.")
+                    elif tipo_carro == 2:
+                        end_pesado = input("Qual endereço deveremos ir")
+                        tel_pesado = input("Qual telefone devemos ligar?")
 
-       dica = int(input("Dica: digite a informação que mais se adequa a situação: "))
+                        guincho_escolha = int (input("Você sabe que tipo de guincho precisaria? (1) - Sim e (2) Não"))
+                        if guincho_escolha == 1:
+                            tipo_guincho = input("Digite o tipo de guinhco que nós encaminharemos para você")
+                        elif guincho_escolha == 2:
 
-       match dica:
-           case 1:
-               end = input("Informe o endereço que devemos encaminhar o guincho: ")
-               agr = int(input("Digite 1 para atendimento imediato ou 2 para agendamento: "))
-               if (agr == 1):
-                   print("Aguarde, ja enviamos um guincho até você.")
-               elif (agr == 2):
-                   agen = input("Para qual data e horario gostaria de agendar? ")
-                   print(f"Agendamento feito com sucesso para: {agen}")
-               else:
-                   print("Opção invalida.")
-           case 2:
-               end = input("Informe o endereço que devemos encaminhar o guincho: ")
-               agr = int(input("Digite 1 para atendimento imediato ou 2 para agendamento: "))
-               if (agr == 1):
-                   print("Aguarde, ja enviamos um guincho até você.")
-               elif (agr == 2):
-                   agen = input("Para qual data e horario gostaria de agendar? ")
-                   print(f"Agendamento feito com sucesso para: {agen}")
-               else:
-                   print("Opção invalida.")
-           case 3:
-               end = input("Informe o endereço que devemos encaminhar o guincho: ")
-               agr = int(input("Digite 1 para atendimento imediato ou 2 para agendamento: "))
-               if (agr == 1):
-                   print("Aguarde, ja enviamos um guincho até você.")
-               elif (agr == 2):
-                   agen = input("Para qual data e horario gostaria de agendar? ")
-                   print(f"Agendamento feito com sucesso para: {agen}")
-               else:
-                   print("Opção invalida.")
-           case 4:
-               end = input("Informe o endereço que devemos encaminhar o guincho: ")
-               agr = int(input("Digite 1 para atendimento imediato ou 2 para agendamento: "))
-               if (agr == 1):
-                   print("Aguarde, ja enviamos um guincho até você.")
-               elif (agr == 2):
-                   agen = input("Para qual data e horario gostaria de agendar? ")
-                   print(f"Agendamento feito com sucesso para: {agen}")
-               else:
-                   print("Opção invalida.")
-           case 5:
-               print("Aguarde! Iremos te ligar em alguns instantes.")
-           case _:
-               print("Opção invalida.")
 
-    case 2:
-       print("Aguarde que iremos encaminhar para um especialista")
-    case 3:
-      print("Informe o CPF ou CNPJ: ")
-    case 4:
-        print("Opção invalida")
+                        print(f"O guinhco para o veiculo pesado de placa: {veic} do propietário de cpf: {cpf} está sendo enviado para o endereço {end_pesado}")
+                    else:
+                        print("Tipo de carro inválido")
+
+
+
+
+
+                case 2:
+                    print("falha operacional")
+        case 2:
+            print("Agendamento: OBS: só realizamos agendaentos  dentro do mês de pedido")
+            data_agendamento = input("Para qual data gostaria de agendar")
+            hora_agendamento = input("Que horas seria feito o atendimento?")
+            end_agendamento = input("Qual endereço deveremos ir")
+            tel_agendamento = input("Qual telefone devemos ligar?")
+            print(f"Seu guinhcho foi agendado para dia {data_agendamento} ás {hora_agendamento} para o endereço {end_agendamento}")
+            print("Fim do atendimento")
+    break
+
+print("Você desejou não começar")
