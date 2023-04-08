@@ -67,7 +67,7 @@ while start == 1:
                             
                             #SE O DONO NÃO SOUBER DE NADA, NÓS ENVIAMOS O AUXILIO.
                             if tipo_carroceria and chassi_alongado and comprimento and peso_com_carga and peso_sem_carga and quantidade_de_eixos == 0:
-                                print(f"Iremos encaminhar um de nossos atendentes para te auxiliar melhor. Confirme os dados abaixo: ")
+                                print(f"Iremos encaminhar  um de nossos atendentes para te auxiliar melhor. Confirme os dados abaixo: ")
                                 print(f"Guincho pedido pelo CPF/CNPJ: {cpf}")
                                 print(f"Ser atendido no endereço: {end_pesado}")
                                 print(f"Telefone para contato: {tel_pesado}")
@@ -165,7 +165,7 @@ while start == 1:
             tipo_carro_agedamento = int (input("O seu veiuculo e (1) leve/comum ou (2) pesado?"))
             if tipo_carro_agedamento == 1:
                 #veiculo leve
-                
+
 
 
                 deseja_cont_leve_agendamento = input("Encerrar atendimento? (1) para SIM e (2) para NAO")
