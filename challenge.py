@@ -1,5 +1,4 @@
-print("Bem-vindo a NEO Porto. Aqui nos agilizamos seu processo de solicitacao de guincho!")
-print("")
+print("Bem-vindo a NEO Porto. Aqui nos agilizamos seu processo de solicitacao de guincho \n")
 print("Vamos começar?")
 start = int(input("Digite (1) para SIM e (2) para NAO: "))
 while start == 1:
