@@ -1,11 +1,44 @@
+#- [x]  No menu criado na entrega 1, deixar ao menos 3 rotinas (itens do menu), funcionais, ou seja, fazendo 
+#o que o é solicitado.
+
+#- [ ]  Implementar função/procedimento/parâmetros no desenvolvimento das rotinas.
+#- [ ]  Armazenamento de dados em variáveis locais
+
+#Saudacoes ao usuario.
+
+
+
+
+
 print("Bem-vindo a NEO Porto. Aqui nos agilizamos seu processo de solicitacao de guincho \n")
-print("Vamos começar?")
+print("Vamos começar? \n")
+
+#iniciando o programa.
 start = int(input("Digite (1) para SIM e (2) para NAO: "))
 while start == 1:
+
+
+
+    #verificando se o usuario esta cadastrado
+    print("Para prosseguir precisamos de algumas informacoes.")
     cpf = float(input("Informe seu CPF ou CNPJ: "))
-    print("Para prosseguir precisamos de mais algumas informacoes.")
-    veic = input("Qual a placa do veiculo: ")
+    veic = input(("Qual a placa do veiculo: "))
+    tel = 0
+    end = 0
+    lista_informacoes = ['ABC123', 'OTM2022']
+
+    if veic != lista_informacoes:
+        print(f'a placa {veic} nao esta cadastrada')
+
+    else: 
+        print(f'a placa {veic} esta cadastrada')
+
+
+    #PLACAS DE CARRO CADASTRADAS.
+  
+
     #PRIMEIRO VEMOS SE O ATENDIMENTO É IMEDIATO OU DE AGENDAMENTO
+
     imediatouagendamento = int (input("Digite (1) para ATENDIMENTO IMEDIATO ou (2) para AGENDAMENTO: "))
     match imediatouagendamento:
         case 1:
@@ -20,17 +53,17 @@ while start == 1:
                     tipo_carro = int (input("O seu veiculo e (1) leve/comum ou (2) pesado?"))
                     if tipo_carro == 1:
                             #TRANSITO + LEVE
-                            end_leve = input("Qual endereco para atendimento? ")
-                            tel_leve = input("Qual telefone para atendimento? ")
-                            print(f"O guinhco para o veiculo comum/leve de placa: {veic} do propietário de CPF: {cpf} está sendo enviado para o endereco: {end_leve}")
+                            end = input("Qual endereco para atendimento? ")
+                            tel = input("Qual telefone para atendimento? ")
+                            print(f"O guinhco para o veiculo comum/leve de placa: {veic} do propietário de CPF: {cpf} está sendo enviado para o endereco: {end}")
                             deseja_cont_leve_transito = input("Encerrar atendimento? (1) para SIM e (2) para NAO")
                             while deseja_cont_leve_transito == 1:
                                 print("FIM DO ATENDIMENTO")   
                             break
                             #TRANSITO + PESADO
                     elif tipo_carro == 2:
-                        end_pesado = input("Qual endereco para atendimento? ")
-                        tel_pesado = input("Qual telefone para atendimento? ")
+                        end = input("Qual endereco para atendimento? ")
+                        tel = input("Qual telefone para atendimento? ")
                             #PERGUNTAMOS SE O DONO DO VEICULO PESADO JÁ TEM CONHECIMENTO DO TIPO DE GUINHCO QUE PRECISA
                         guincho_escolha = int (input("Voce tem conhecimento sobre guinchos e saberia o necessario para seu veiculo?: (1) - SIM e (2) NAO "))
                             #CASO SIM, NÓS PEDIMOS MAIS INFORMAÇÕES PARA CONFIRMAR E ENVIAMOS.
@@ -63,15 +96,15 @@ while start == 1:
                             if tipo_carroceria and chassi_alongado and comprimento and peso_com_carga and peso_sem_carga and quantidade_de_eixos == 0:
                                 print(f"Iremos encaminhar  um de nossos atendentes para te auxiliar melhor. Confirme os dados abaixo: ")
                                 print(f"Guincho pedido pelo CPF/CNPJ: {cpf}")
-                                print(f"Ser atendido no endereço: {end_pesado}")
-                                print(f"Telefone para contato: {tel_pesado}")
+                                print(f"Ser atendido no endereço: {end}")
+                                print(f"Telefone para contato: {tel}")
                                 deseja_cont_pesado_transito_nao_sabe = input("Encerrar atendimento? (1) para SIM e (2) para NAO: ")
                                 while deseja_cont_pesado_transito_nao_sabe == 1:
                                     print("FIM DO ATENDIMENTO")
                                 break                                                   
                             #CASO ELE SAIBA DE ALGUMA INFORMAÇÃO
                             else:
-                                print(f"Obrigade pelas informações. O guinhco para o veiculo pesado de placa: {veic} do propietário de CPF: {cpf} está sendo enviado para o endereço: {end_pesado}")
+                                print(f"Obrigade pelas informações. O guinhco para o veiculo pesado de placa: {veic} do propietário de CPF: {cpf} está sendo enviado para o endereço: {end}")
                                 deseja_cont_pesado_transito_nao_sabe = input("Encerrar atendimento? (1) para SIM e (2) para NAO: ")
                                 while deseja_cont_pesado_transito_nao_sabe == 1:
                                     print("FIM DO ATENDIMENTO")
@@ -85,9 +118,9 @@ while start == 1:
                         tipo_carro = int (input("O seu veiculo é (1) leve/comum ou (2) pesado? "))
                         if tipo_carro == 1:
                                 #FALHA + LEVE
-                                end_leve = input("Qual endereco para atendimento? ")
-                                tel_leve = input("Qual telefone para atendimento? ")
-                                print(f"O guinhco para o veiculo comum/leve de placa: {veic} do propietario de CPF: {cpf} está sendo enviado para o endereco: {end_leve}")
+                                end = input("Qual endereco para atendimento? ")
+                                tel = input("Qual telefone para atendimento? ")
+                                print(f"O guinhco para o veiculo comum/leve de placa: {veic} do propietario de CPF: {cpf} está sendo enviado para o endereco: {end}")
                                 deseja_cont_leve_falha = input("Encerrar atendimento? (1) para SIM e (2) para NAO: ")
                                 while deseja_cont_leve_falha == 1:
                                     print("FIM DO ATENDIMENTO")
@@ -109,7 +142,7 @@ while start == 1:
                                 peso_sem_carga = float(input("Peso do veiculo sem a carga "))
                                 quantidade_de_eixos = int(input("Qual a quantidade de eixo "))
 
-                                print(f"O guinhco {tipo_guincho}para o veiculo comum/leve de placa: {veic} do propietario de CPF: {cpf} está sendo enviado para o endereço {end_pesado}")
+                                print(f"O guinhco {tipo_guincho}para o veiculo comum/leve de placa: {veic} do propietario de CPF: {cpf} está sendo enviado para o endereço {end}")
                                 deseja_cont_pesado_transito = input("Encerrar atendimento? (1) para SIM e (2) para NAO: ")
                                 while deseja_cont_pesado_transito == 1:
                                     print("FIM DO ATENDIMENTO")
@@ -129,9 +162,9 @@ while start == 1:
                                 if tipo_carroceria and chassi_alongado and comprimento and peso_com_carga and peso_sem_carga and quantidade_de_eixos == 0:
                                     print(f"Iremos encaminhar um de nossos atendentes para te auxiliar melhor. Confirme os dados abaixo: ")
                                     print(f"Guincho pedido pelo CPF/CNPJ: {cpf}")
-                                    print(f"Ser atendido no endereço: {end_pesado}")
-                                    print(f"Telefone para contato: {tel_pesado}")
-                                    print(f"O guinhco para o veiculo pesado de placa: {veic} do propietário de cpf: {cpf} está sendo enviado para o endereço {end_pesado}")
+                                    print(f"Ser atendido no endereço: {end}")
+                                    print(f"Telefone para contato: {tel}")
+                                    print(f"O guinhco para o veiculo pesado de placa: {veic} do propietário de cpf: {cpf} está sendo enviado para o endereço {end}")
                                     deseja_cont_pesado_transito_nao_sabe = input("Encerrar atendimento? (1) para SIM e (2) para NAO")
                                     while deseja_cont_pesado_transito_nao_sabe == 1:
                                         print("FIM DO ATENDIMENTO")
@@ -146,20 +179,20 @@ while start == 1:
         #CASO AGENDAMENTO        
         case 2:
             print("AGENDAMENTO: OBS* So realizamos agendamentos dentro do mês do pedido")
-            data_agendamento = input("Para qual data gostaria de agendar? ")
-            hora_agendamento = input("Que horas seria feito o atendimento? ")
-            end_agendamento = input("Qual endereço deveremos ir? ")
-            tel_agendamento = input("Qual telefone devemos ligar? ")
-            tipo_carro_agedamento = int (input("O seu veiculo e (1) leve/comum ou (2) pesado? "))
-            if tipo_carro_agedamento == 1:
+            data = input("Para qual data gostaria de agendar? ")
+            hora = input("Que horas seria feito o atendimento? ")
+            end = input("Qual endereço deveremos ir? ")
+            tel = input("Qual telefone devemos ligar? ")
+            tipo_carro = int (input("O seu veiculo e (1) leve/comum ou (2) pesado? "))
+            if tipo_carro == 1:
                 #veiculo leve
-                print(f"O guincho para seu veiculo leve irá ser enviado dia: {data_agendamento} as: {hora_agendamento} para o endereco: {end_agendamento}.")
-                print(f"iremos contatar pelo telefone: {tel_agendamento}")
+                print(f"O guincho para seu veiculo leve irá ser enviado dia: {data} as: {hora} para o endereco: {end}.")
+                print(f"iremos contatar pelo telefone: {tel}")
                 deseja_cont_leve_agendamento = input("Encerrar atendimento? (1) para SIM e (2) para NAO: ")
                 while deseja_cont_leve_agendamento == 1:
                     print("FIM DO ATENDIMENTO")   
                 break
-            elif tipo_carro_agedamento  == 2:
+            elif tipo_carro == 2:
                 #veiculo pesado
                 print("Para melhor assertividade, digite as proximas informações de acordo com seu conhecimento sobre seu veiculo.")
                 print("Caso não saiba, digite apenas (0)")
@@ -171,15 +204,15 @@ while start == 1:
                 quantidade_de_eixos = int(input("Qual a quantidade de eixo: "))
                 if tipo_carroceria and chassi_alongado and comprimento and peso_com_carga and peso_sem_carga and quantidade_de_eixos == 0:
                     print("Obrigado pelas informacoes. ")
-                    print(f"O guinhco para o veiculo pesado foi agendado para o dia: {data_agendamento} as: {hora_agendamento}")
-                    print(f" MAIS INFORMACOES: placa: {veic} propietário de CPF: {cpf} foi solcicitado para o endereco: {end_agendamento}")
+                    print(f"O guinhco para o veiculo pesado foi agendado para o dia: {data} as: {hora}")
+                    print(f" MAIS INFORMACOES: placa: {veic} propietário de CPF: {cpf} foi solcicitado para o endereco: {end}")
                     deseja_cont_pesado_agendamento = input("Encerrar atendimento? (1) para SIM e (2) para NAO")
                     while deseja_cont_pesado_agendamento == 1:
                         print("FIM DO ATENDIMENTO")
                     break
                 else:
                     print("Obrigade pelas informacoes.")
-                    print(f"O guinhco para o veiculo pesado de placa: {veic} do propietário de CPF: {cpf} para o endereco: {end_agendamento} foi agendado.")
+                    print(f"O guinhco para o veiculo pesado de placa: {veic} do propietário de CPF: {cpf} para o endereco: {end} foi agendado.")
                     deseja_cont_pesado_agendamento = input("Encerrar atendimento? (1) para SIM e (2) para NAO")
                     while deseja_cont_pesado_agendamento == 1:
                         print("FIM DO ATENDIMENTO")
