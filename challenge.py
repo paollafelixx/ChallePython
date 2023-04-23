@@ -27,14 +27,7 @@ while start == 1:
     end = 0
     lista_informacoes = ['ABC123', 'OTM2022']
 
-    if veic != lista_informacoes:
-        print(f'a placa {veic} nao esta cadastrada')
 
-    else: 
-        print(f'a placa {veic} esta cadastrada')
-
-
-    #PLACAS DE CARRO CADASTRADAS.
   
 
     #PRIMEIRO VEMOS SE O ATENDIMENTO É IMEDIATO OU DE AGENDAMENTO

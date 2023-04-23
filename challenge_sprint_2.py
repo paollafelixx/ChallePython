@@ -8,8 +8,8 @@ for caractere in cpf:
     if caractere.isdigit():
         cpf_numerico += caractere
 
+esta_cadastrado = False #assumindo que o usuario nao esta cadastrado
 
-esta_cadastrado = False
 for usuario in lista_usuarios:
     if cpf_numerico == str(usuario[0]) and veic == usuario[1]:
         esta_cadastrado = True
